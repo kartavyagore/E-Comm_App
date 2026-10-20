@@ -1,4 +1,5 @@
 import { db } from '../utils/storageAdapter.js';
+import { emailService } from '../services/emailService.js';
 
 export const createOrder = async (req, res, next) => {
   try {
@@ -76,6 +77,11 @@ export const createOrder = async (req, res, next) => {
       tax,
       total,
       shippingAddress
+    });
+
+    // Send customer order confirmation email asynchronously
+    emailService.sendOrderConfirmationEmail(order).catch((err) => {
+      console.warn('Customer order confirmation email notice:', err.message);
     });
 
     res.status(201).json({

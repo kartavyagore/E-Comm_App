@@ -45,5 +45,15 @@ export const ENV = {
   SUPABASE_S3_ENDPOINT: isPlaceholder(process.env.SUPABASE_S3_ENDPOINT) ? 'https://cwavjdqxjiaxpaswkeoc.supabase.co/storage/v1/s3' : (process.env.SUPABASE_S3_ENDPOINT || ''),
   SUPABASE_S3_ACCESS_KEY_ID: isPlaceholder(process.env.SUPABASE_S3_ACCESS_KEY_ID) ? '' : (process.env.SUPABASE_S3_ACCESS_KEY_ID || ''),
   SUPABASE_S3_SECRET_ACCESS_KEY: isPlaceholder(process.env.SUPABASE_S3_SECRET_ACCESS_KEY) ? '' : (process.env.SUPABASE_S3_SECRET_ACCESS_KEY || ''),
-  SUPABASE_S3_REGION: process.env.SUPABASE_S3_REGION || 'us-east-1'
+  SUPABASE_S3_REGION: process.env.SUPABASE_S3_REGION || 'us-east-1',
+
+  // Email Notification Settings
+  EMAIL: {
+    HOST: process.env.SMTP_HOST || '',
+    PORT: Number(process.env.SMTP_PORT) || 587,
+    SECURE: process.env.SMTP_SECURE === 'true' || process.env.SMTP_PORT === '465',
+    USER: process.env.SMTP_USER || '',
+    PASS: process.env.SMTP_PASS || '',
+    FROM: process.env.EMAIL_FROM || '"AURA Sound & Living" <orders@aurasound.com>'
+  }
 };
