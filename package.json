@@ -1,0 +1,16 @@
+{
+  "name": "aura-sound-and-living-ecommerce",
+  "version": "1.0.0",
+  "description": "AURA Sound & Living — Full-Stack E-Commerce Web Application (React, Express, Supabase, Cloudinary)",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && npm run seed",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "test:server": "cd server && node src/utils/testApi.js"
+  },
+  "keywords": ["ecommerce", "react", "express", "supabase", "cloudinary", "fullstack"],
+  "author": "AURA Sound & Living",
+  "license": "ISC"
+}
